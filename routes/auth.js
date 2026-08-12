@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
     let user = await User.findOne({ email });
 
     // Jika user belum pernah dibuat (seeding otomatis pertama kali untuk dev)
-    if (!user && email === 'backend.bemprkk@gmail.com' && password === 'AdminBemprkk.123') {
+    if (!user && email === 'backend.bemprkk@unj.ac.id' && password === 'AdminBemprkk.123') {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
       user = new User({ email, password: hashedPassword });
