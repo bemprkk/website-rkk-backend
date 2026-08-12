@@ -25,7 +25,7 @@ app.use('/api/content', require('./routes/content'));
 
 // Database Connection
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI ? process.env.MONGO_URI.trim().replace(/^["']|["']$/g, '') : '';
 
 // Start Server
 app.listen(PORT, () => {
