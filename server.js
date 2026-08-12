@@ -57,6 +57,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/content', require('./routes/content'));
+app.use('/api/backup', require('./routes/backup'));
 
 // Start Server locally if run directly
 const PORT = process.env.PORT || 5000;
