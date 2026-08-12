@@ -19,6 +19,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Healthcheck Route
+app.get('/', (req, res) => {
+  res.send('BEMPRKK Backend API is running!');
+});
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/content', require('./routes/content'));
